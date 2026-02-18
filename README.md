@@ -166,24 +166,8 @@ This ensures:
 
 # 📂 Project Structure
 
+<img width="743" height="507" alt="image" src="https://github.com/user-attachments/assets/27551659-87e0-4d04-86b5-290b6691c4c7" />
 
-CoinNote/
-│
-├── main.py              # FastAPI entry point
-├── database.py          # Database configuration
-├── applications.db      # SQLite database
-│
-├── ai_agent.py          # AI orchestration logic
-├── face_utils.py        # Face verification module
-├── ocr_utils.py         # OCR processing module
-├── risk_engine.py       # Risk scoring engine
-│
-├── templates/           # HTML templates
-├── static/              # Static files
-├── uploads/             # Uploaded documents
-│
-├── requirements.txt
-└── README.md
 
 
 ---
