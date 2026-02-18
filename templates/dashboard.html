@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinNote - Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page-dashboard">
+    <header class="dashboard-header">
+      <div class="brand">
+        <div class="brand-logo">CN</div>
+        <div class="brand-text">
+          <span class="brand-name">CoinNote</span>
+          <span class="brand-tagline">Quick Services</span>
+        </div>
+      </div>
+      <div class="dashboard-actions">
+        <span class="profile-pill">Student</span>
+        <a href="bank-dashboard.html" class="btn btn-ghost btn-sm">Banker View</a>
+        <button class="icon-btn" title="Home">🏠</button>
+        <button class="icon-btn" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="dashboard-hero">
+        <h1>Welcome to CoinNote!</h1>
+        <p>Choose a service below to get started with your banking journey.</p>
+      </section>
+
+      <section class="dashboard-layout">
+        <div class="quick-services">
+          <h2>Quick Services</h2>
+          <div class="service-grid">
+            <a href="service-flow.html?service=kyc" class="service-card">
+              <div class="service-icon service-icon-blue">KYC</div>
+              <h3>KYC Verification</h3>
+              <p>Complete your identity verification</p>
+            </a>
+            <a href="service-flow.html?service=sip" class="service-card">
+              <div class="service-icon service-icon-green">SIP</div>
+              <h3>SIP Investment</h3>
+              <p>Start systematic investment plans</p>
+            </a>
+            <a href="service-flow.html?service=mutual-funds" class="service-card">
+              <div class="service-icon service-icon-purple">MF</div>
+              <h3>Mutual Funds</h3>
+              <p>Explore investment opportunities</p>
+            </a>
+            <a href="service-flow.html?service=personal-loan" class="service-card">
+              <div class="service-icon service-icon-orange">PL</div>
+              <h3>Personal Loans</h3>
+              <p>Quick loan approval</p>
+            </a>
+            <a href="service-flow.html?service=wealth-management" class="service-card">
+              <div class="service-icon service-icon-pink">WM</div>
+              <h3>Wealth Management</h3>
+              <p>Premium wealth services</p>
+            </a>
+            <a href="service-flow.html?service=international-banking" class="service-card">
+              <div class="service-icon service-icon-teal">IB</div>
+              <h3>International Banking</h3>
+              <p>Global banking solutions</p>
+            </a>
+          </div>
+        </div>
+
+        <aside class="special-offers">
+          <h2>Special Offers for You</h2>
+          <p class="offers-subtitle">Based on your profile: Student</p>
+          <ul class="offer-list">
+            <li class="offer-card">
+              <h3>Student Savings Account</h3>
+              <p>Zero balance account with free debit card</p>
+              <span class="offer-tag">0% fees</span>
+            </li>
+            <li class="offer-card">
+              <h3>Education Loan</h3>
+              <p>Low interest rates for students</p>
+              <span class="offer-tag">8.5% p.a</span>
+            </li>
+            <li class="offer-card">
+              <h3>Student Credit Card</h3>
+              <p>Build credit history early</p>
+              <span class="offer-tag">No annual fee</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open AI assistant">
+      TARS
+    </button>
+    <div id="ai-widget" class="ai-widget" aria-hidden="true">
+      <header class="ai-widget-header">
+        <div>
+          <div class="ai-widget-title">TARS AI</div>
+          <div class="ai-widget-subtitle">Smart banking assistant</div>
+        </div>
+        <button id="ai-widget-close" class="ai-close-btn" aria-label="Close AI assistant">
+          ✕
+        </button>
+      </header>
+      <div id="ai-messages" class="ai-messages">
+        <div class="ai-message ai-message-bot">
+          I can help you pick the right service, explain offers, and guide you
+          through KYC, SIP, and mutual funds applications.
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input
+          id="ai-input"
+          type="text"
+          placeholder="Ask TARS about services..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
+

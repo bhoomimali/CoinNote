@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinNote - Create Account</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page-auth">
+    <header class="top-nav">
+      <div class="brand">
+        <div class="brand-logo">CN</div>
+        <div class="brand-text">
+          <span class="brand-name">CoinNote</span>
+          <span class="brand-tagline">AI Powered Banking</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html" class="btn btn-outline">Sign In</a>
+      </nav>
+    </header>
+
+    <main class="auth-wrapper">
+      <section class="auth-card">
+        <div class="auth-header">
+          <div class="auth-logo">CN</div>
+          <h1>CoinNote</h1>
+          <p>Create Your Account</p>
+        </div>
+
+        <form id="signup-form" class="auth-form">
+          <h2>Get Started</h2>
+
+          <label class="field">
+            <span>Full Name</span>
+            <input type="text" name="fullName" placeholder="Enter your full name" required />
+          </label>
+
+          <label class="field">
+            <span>Phone Number</span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Profession</span>
+            <select name="profession" required>
+              <option value="">Select your profession</option>
+              <option value="student">Student</option>
+              <option value="salaried">Salaried</option>
+              <option value="self-employed">Self Employed</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Create Password</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Create a strong password"
+              minlength="6"
+              required
+            />
+          </label>
+
+          <button type="submit" class="btn btn-primary auth-submit">
+            Create Account
+          </button>
+
+          <p class="auth-footer-text">
+            Already have an account?
+            <a href="dashboard.html">Sign In</a>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open AI assistant">
+      TARS
+    </button>
+    <div id="ai-widget" class="ai-widget" aria-hidden="true">
+      <header class="ai-widget-header">
+        <div>
+          <div class="ai-widget-title">TARS AI</div>
+          <div class="ai-widget-subtitle">Need help signing up?</div>
+        </div>
+        <button id="ai-widget-close" class="ai-close-btn" aria-label="Close AI assistant">
+          ✕
+        </button>
+      </header>
+      <div id="ai-messages" class="ai-messages">
+        <div class="ai-message ai-message-bot">
+          I can explain what details you should enter and help you choose the
+          right products as a student or professional.
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input
+          id="ai-input"
+          type="text"
+          placeholder="Ask TARS about signup..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
+

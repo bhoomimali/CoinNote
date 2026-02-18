@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinNote - Application Flow</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page-flow">
+    <header class="flow-header">
+      <button onclick="history.back()" class="back-btn" type="button">←</button>
+      <div class="flow-title-block">
+        <h1 id="service-title">Service Application</h1>
+        <p>Step <span id="mf-step-label">1</span> of 3</p>
+      </div>
+    </header>
+
+    <div class="flow-progress">
+      <div id="mf-progress-bar" class="flow-progress-bar"></div>
+    </div>
+
+    <main class="flow-main">
+      <!-- Step 1: Documents -->
+      <section class="flow-card" data-step="1">
+        <h2>Upload Your Documents</h2>
+        <p id="docs-description">
+          Upload your PAN card, Aadhar card, or any government-issued ID.
+        </p>
+
+        <div id="drop-zone" class="upload-zone">
+          <div class="upload-icon">⬆</div>
+          <p class="upload-title">Click to upload document</p>
+          <p class="upload-subtitle">PNG, JPG, or PDF (max 5MB)</p>
+          <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.pdf" hidden />
+        </div>
+
+        <ul id="file-list" class="file-list"></ul>
+
+        <div class="flow-actions">
+          <button id="mf-next-1" class="btn btn-primary">Next</button>
+        </div>
+      </section>
+
+      <!-- Step 2: Face Verification -->
+      <section class="flow-card" data-step="2" hidden>
+        <h2>Face Verification</h2>
+        <p>Take a selfie or upload a photo for identity verification.</p>
+
+        <div id="selfie-drop-zone" class="upload-zone">
+          <div class="upload-icon">📷</div>
+          <p class="upload-title">Take a selfie</p>
+          <p class="upload-subtitle">Make sure your face is clearly visible</p>
+          <input
+            id="selfie-file-input"
+            type="file"
+            accept="image/*"
+            capture="user"
+            hidden
+          />
+        </div>
+
+        <ul id="selfie-file-list" class="file-list"></ul>
+
+        <div class="flow-actions">
+          <button data-prev="1" class="btn btn-ghost mf-prev">Back</button>
+          <button id="mf-next-2" class="btn btn-primary">Next</button>
+        </div>
+      </section>
+
+      <!-- Step 3: Fraud Detection -->
+      <section class="flow-card" data-step="3" hidden>
+        <h2>Fraud Detection</h2>
+        <p>
+          We run AI-powered checks on your documents and selfie to keep your
+          account safe.
+        </p>
+
+        <div id="mf-review" class="review-panel">
+          <h3>Status</h3>
+          <div class="review-row">
+            <span class="review-label">Document verification</span>
+            <span class="review-value" id="status-docs">Pending</span>
+          </div>
+          <div class="review-row">
+            <span class="review-label">Face match</span>
+            <span class="review-value" id="status-face">Pending</span>
+          </div>
+          <div class="review-row">
+            <span class="review-label">Risk score</span>
+            <span class="review-value" id="status-risk">Not evaluated</span>
+          </div>
+        </div>
+
+        <div class="flow-actions">
+          <button data-prev="2" class="btn btn-ghost mf-prev">Back</button>
+          <button id="mf-submit" class="btn btn-primary">Run Fraud Detection</button>
+        </div>
+      </section>
+    </main>
+
+    <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open AI assistant">
+      TARS
+    </button>
+    <div id="ai-widget" class="ai-widget" aria-hidden="true">
+      <header class="ai-widget-header">
+        <div>
+          <div class="ai-widget-title">TARS AI</div>
+          <div class="ai-widget-subtitle">Secure onboarding assistant</div>
+        </div>
+        <button id="ai-widget-close" class="ai-close-btn" aria-label="Close AI assistant">
+          ✕
+        </button>
+      </header>
+      <div id="ai-messages" class="ai-messages">
+        <div class="ai-message ai-message-bot">
+          I guide you through document upload, selfie verification, and fraud
+          checks for every CoinNote service.
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input
+          id="ai-input"
+          type="text"
+          placeholder="Ask TARS about verification..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
+

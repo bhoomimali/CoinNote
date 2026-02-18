@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pytesseract
+pillow
+deepface
+tensorflow-cpu==2.13.0
+numpy==1.25.2
+openai

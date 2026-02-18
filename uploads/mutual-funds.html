@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinNote - Mutual Funds Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-flow">
+    <header class="flow-header">
+      <button onclick="history.back()" class="back-btn" type="button">←</button>
+      <div class="flow-title-block">
+        <h1>Mutual Funds Application</h1>
+        <p>Step <span id="mf-step-label">1</span> of 3</p>
+      </div>
+    </header>
+
+    <div class="flow-progress">
+      <div id="mf-progress-bar" class="flow-progress-bar"></div>
+    </div>
+
+    <main class="flow-main">
+      <!-- Step 1: Documents -->
+      <section class="flow-card" data-step="1">
+        <h2>Upload Your Documents</h2>
+        <p>Upload your PAN card, Aadhar card, or any government-issued ID.</p>
+
+        <div id="drop-zone" class="upload-zone">
+          <div class="upload-icon">⬆</div>
+          <p class="upload-title">Click to upload document</p>
+          <p class="upload-subtitle">PNG, JPG, or PDF (max 5MB)</p>
+          <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.pdf" hidden />
+        </div>
+
+        <ul id="file-list" class="file-list"></ul>
+
+        <div class="flow-actions">
+          <button id="mf-next-1" class="btn btn-primary">Next</button>
+        </div>
+      </section>
+
+      <!-- Step 2: Investment Details -->
+      <section class="flow-card" data-step="2" hidden>
+        <h2>Investment Details</h2>
+        <p>Tell us how you want to invest.</p>
+
+        <form id="mf-details-form" class="flow-form">
+          <label class="field">
+            <span>Investment Type</span>
+            <select name="type" required>
+              <option value="">Select type</option>
+              <option value="sip">SIP (Monthly)</option>
+              <option value="lumpsum">Lump Sum</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Amount (₹)</span>
+            <input type="number" name="amount" placeholder="e.g. 2000" min="500" required />
+          </label>
+          <label class="field">
+            <span>Risk Profile</span>
+            <select name="risk" required>
+              <option value="">Select risk level</option>
+              <option value="conservative">Conservative</option>
+              <option value="balanced">Balanced</option>
+              <option value="aggressive">Aggressive</option>
+            </select>
+          </label>
+        </form>
+
+        <div class="flow-actions">
+          <button data-prev="1" class="btn btn-ghost mf-prev">Back</button>
+          <button id="mf-next-2" class="btn btn-primary">Next</button>
+        </div>
+      </section>
+
+      <!-- Step 3: Review -->
+      <section class="flow-card" data-step="3" hidden>
+        <h2>Review &amp; Confirm</h2>
+        <p>Check your details before submitting your application.</p>
+
+        <div id="mf-review" class="review-panel"></div>
+
+        <div class="flow-actions">
+          <button data-prev="2" class="btn btn-ghost mf-prev">Back</button>
+          <button id="mf-submit" class="btn btn-primary">Submit Application</button>
+        </div>
+      </section>
+    </main>
+
+    <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open AI assistant">
+      TARS
+    </button>
+    <div id="ai-widget" class="ai-widget" aria-hidden="true">
+      <header class="ai-widget-header">
+        <div>
+          <div class="ai-widget-title">TARS AI</div>
+          <div class="ai-widget-subtitle">Mutual funds helper</div>
+        </div>
+        <button id="ai-widget-close" class="ai-close-btn" aria-label="Close AI assistant">
+          ✕
+        </button>
+      </header>
+      <div id="ai-messages" class="ai-messages">
+        <div class="ai-message ai-message-bot">
+          I can explain SIP vs lump sum, risk profiles, and help you decide how
+          much to invest.
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input
+          id="ai-input"
+          type="text"
+          placeholder="Ask TARS about mutual funds..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

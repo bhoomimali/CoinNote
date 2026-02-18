@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinNote - AI Powered Banking</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page-landing">
+    <header class="top-nav">
+      <div class="brand">
+        <div class="brand-logo">CN</div>
+        <div class="brand-text">
+          <span class="brand-name">CoinNote</span>
+          <span class="brand-tagline">AI Powered Banking</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#why">Why CoinNote</a>
+        <a href="signup.html" class="btn btn-outline">Sign Up</a>
+        <a href="dashboard.html" class="btn btn-primary">Login</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="hero-content">
+        <h1>
+          Banking Made
+          <span class="accent">Intelligent with TARS</span>
+        </h1>
+        <p class="hero-subtitle">
+          Experience the future of banking powered by AI. TARS handles everything
+          from document verification to personalized recommendations, making your
+          banking journey seamless and efficient.
+        </p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">Get Started</a>
+          <a href="#why" class="btn btn-ghost">Learn More</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">AI Powered</span>
+          <span class="badge">Secure &amp; Verified</span>
+          <span class="badge">For Students &amp; Professionals</span>
+        </div>
+      </section>
+
+      <section class="hero-visual">
+        <div class="tars-card">
+          <div class="tars-icon"></div>
+          <h2>TARS AI</h2>
+          <p>Your always-on banking copilot for smarter decisions.</p>
+        </div>
+      </section>
+    </main>
+
+    <section id="why" class="section">
+      <h2>Why Choose CoinNote?</h2>
+      <p class="section-subtitle">
+        Powered by TARS AI for unmatched efficiency and a delightful banking
+        experience.
+      </p>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Smart KYC</h3>
+          <p>
+            Upload your documents once and let TARS validate, extract, and
+            autofill details across all your applications.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Personalized Offers</h3>
+          <p>
+            Get tailored products like student credit cards, loans, and
+            investments based on your profile.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Secure by Design</h3>
+          <p>
+            Enterprise-grade encryption and real-time anomaly detection for
+            every transaction.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AI Agent Floating Widget -->
+    <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open AI assistant">
+      TARS
+    </button>
+
+    <div id="ai-widget" class="ai-widget" aria-hidden="true">
+      <header class="ai-widget-header">
+        <div>
+          <div class="ai-widget-title">TARS AI</div>
+          <div class="ai-widget-subtitle">Ask anything about CoinNote</div>
+        </div>
+        <button id="ai-widget-close" class="ai-close-btn" aria-label="Close AI assistant">
+          ✕
+        </button>
+      </header>
+      <div id="ai-messages" class="ai-messages">
+        <div class="ai-message ai-message-bot">
+          Hi, I'm TARS. I can help you understand accounts, KYC, mutual funds,
+          and more. How can I assist you today?
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input
+          id="ai-input"
+          type="text"
+          placeholder="Ask TARS anything..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
+
